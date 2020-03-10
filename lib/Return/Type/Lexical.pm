@@ -26,6 +26,10 @@ sub _in_effect {
     return !defined $in_effect || $in_effect;
 }
 
+# XXX This is kind of janky. It relies upon Return::Type using Attribute::Handlers, and it assumes
+# some internal Attribute::Handlers behavior. If it proves to be too fragile, we may need to copy
+# the Return::Type code to here. Or make Return::Type lexical if that can be done without breaking
+# backward-compatibility.
 my $handler;
 BEGIN {
     $handler = $UNIVERSAL::{ReturnType};
