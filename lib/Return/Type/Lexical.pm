@@ -19,7 +19,8 @@ sub unimport {
 }
 
 sub _in_effect {
-    my $level = shift // 0;
+    my ($level) = @_;
+    $level = 0 if !defined $level;
     my $hinthash = (caller($level))[10];
     my $in_effect = $hinthash->{'Return::Type::Lexical/in_effect'};
     return !defined $in_effect || $in_effect;
