@@ -4,7 +4,7 @@ Return::Type::Lexical - Same thing as Return::Type, but lexical
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
